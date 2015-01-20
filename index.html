@@ -2,16 +2,19 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>&lt;my-repo&gt;</title>
+    <title>&lt;Tag test&gt;</title>
 
     <!-- Importing Web Component's Polyfill -->
-    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+<!--    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>-->
 
     <!-- Importing Custom Elements -->
-    <link rel="import" href="src/my-element.html">
+    <link rel="import" href="src/f-input.html"></link>
+    <link rel="import" href="src/name-tag.html"></link>
 </head>
 <body>
 <form>
+    <input value="pierre" />
+    <name-badge>Bob</name-badge>
     <!-- Using Custom Elements -->
     <f-input value="pierre" />
 </form>
