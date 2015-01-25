@@ -18,5 +18,9 @@
   "homepage": "https://github.com/pierr/w-component",
   "dependencies": {
     "webcomponents.js": "~0.5.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^1.9.1",
+    "gulp": "^3.8.10"
   }
 }

@@ -1,19 +1,30 @@
 <html>
+<style>
+.zoom[is="totally-not-checkbox"]{
+  -webkit-transform: scale(1.5);
+}
+*[is="totally-not-checkbox"]{
+  -webkit-transition: -webkit-transform 0.1s ease-out;
+}
+</style>
 <script>
+var proto = Object.create(HTMLInputElement.prototype);
 
-    var proto = Object.create(HTMLInputElement.prototype);
-    proto.createdCallback = function() {
-        this.type = "checkbox";
-        this.addEventListener("change", this.toggleZoom);
-    };
-    proto.toggleZoom = function(){
-        console.log('change');
-    };
+proto.createdCallback = function() {
+  this.type = "checkbox";
+  this.addEventListener("change", this.toggleZoom);
 
-    var nCB = document.registerElement('f-input', {
-        prototype: proto,
-        extends: 'input'
-    });
+};
+
+proto.toggleZoom = function(){
+  this.classList.toggle('zoom')
+  this.dispatchEvent(new Event('f-change'));
+};
+
+var nCB = document.registerElement("f-input", {
+  prototype: proto,
+  extends: 'input'
+});
 
 </script>
 </html>

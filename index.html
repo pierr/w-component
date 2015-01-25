@@ -16,9 +16,13 @@
     <input value="pierre" />
     <name-badge>Bob</name-badge>
     <!-- Using Custom Elements -->
-    <f-input value="pierre" />
+    <input is='f-input' value="pierre" />
 </form>
-
+<script>
+document.querySelector('input[is="f-input"]').addEventListener('f-change', function (e) {
+  console.log('triggered');
+}, false);
+</script>
 
 </body>
 </html>
